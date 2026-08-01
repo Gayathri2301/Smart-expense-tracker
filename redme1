@@ -1,0 +1,147 @@
+# Smart Expense Tracker
+
+## Overview
+
+Smart Expense Tracker is a RESTful web application built using **Java 17** and **Spring Boot** that allows users to manage their daily expenses. The application supports creating, viewing, updating, deleting, and calculating expenses through REST APIs.
+
+Expense data is stored in a local JSON file, making the application lightweight and easy to run without requiring a database.
+
+---
+
+## Features
+
+* Add new expenses
+* View all expenses
+* View an expense by ID
+* Update existing expenses
+* Delete expenses
+* Calculate total expense amount
+* JSON file persistence
+* Input validation
+* Unit and integration testing
+
+---
+
+## Technologies
+
+* Java 17
+* Spring Boot
+* Maven
+* Jackson
+* JUnit 5
+* MockMvc
+
+---
+
+## Project Structure
+
+```text
+src/
+ ├── main/
+ │    ├── java/
+ │    └── resources/
+ └── test/
+      ├── java/
+      └── resources/
+```
+
+---
+
+## Install Dependencies
+
+Clone the repository.
+
+```bash
+git clone <repository-url>
+cd expense-tracker
+```
+
+Install all dependencies.
+
+```bash
+mvn clean install
+```
+
+---
+
+## Run the Server
+
+Start the Spring Boot application.
+
+```bash
+mvn spring-boot:run
+```
+
+The application starts on:
+
+```
+http://localhost:8081
+```
+
+---
+
+## Run the Tests
+
+Execute all tests.
+
+```bash
+mvn test
+```
+
+---
+
+## Example API
+
+### List Expenses
+
+```
+GET /api/expenses
+```
+
+### Add Expense
+
+```
+POST /api/expenses
+```
+
+Example JSON
+
+```json
+{
+  "title": "Groceries",
+  "description": "Weekly supermarket shopping",
+  "amount": 42.50,
+  "category": "Food",
+  "date": "2026-07-30"
+}
+```
+
+### Get Total Expenses
+
+```
+GET /api/expenses/total
+```
+
+---
+
+## Design
+
+The application follows a layered architecture:
+
+* Controller Layer
+* Service Layer
+* Repository Layer
+* Model Layer
+
+Data is stored in a JSON file instead of a database for simplicity.
+
+---
+
+## Future Improvements
+
+* User authentication
+* Database support
+* Monthly reports
+* Expense search
+* Swagger documentation
+* Docker deployment
